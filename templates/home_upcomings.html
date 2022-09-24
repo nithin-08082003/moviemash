@@ -1,0 +1,20 @@
+<!-- home upcomings posts -->
+<div class="home_upcomings">
+  <h2 class="home_upcomings_title">Upcomings</h2>
+  <div class="home_up_main_container">
+    {% for home_up_post in home_upcomings %}
+    <div class="home_up_blogs">
+      <a
+        href="{% url 'detail' home_up_post.id %}"
+        class="home_up_link_container"
+      >
+        <img class="home_up_image" src="{{ home_up_post.image.url }}" />
+        <p class="home_up_headline">
+          {{ home_up_post.headline|truncatewords:8 }}
+        </p>
+      </a>
+      <p class="home_up_updated">| {{ home_up_post.updated|timesince }} AGO</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>

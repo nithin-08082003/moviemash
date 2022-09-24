@@ -1,0 +1,334 @@
+{% load static %}
+<!-- css links for header -->
+<style>
+  @media (max-width: 400px) {
+    * {
+      cursor: default;
+    }
+  }
+</style>
+<link rel="stylesheet" type="text/css" href="{% static '/css/header.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static '/css/basics.css' %}" />
+<!-- main header theme starts -->
+
+<div class="HEADER_CONTAINER">
+  <div class="LOGO_CONTAINER">
+    <svg
+      class="MM_LOGO"
+      style="font-family: 'Poppins'"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      role="img"
+      width="1em"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M22 12c0-5.54-4.46-10-10-10c-1.17 0-2.3.19-3.38.56l.7 1.94c.85-.34 1.74-.53 2.68-.53c4.41 0 8.03 3.62 8.03 8.03c0 4.41-3.62 8.03-8.03 8.03c-4.41 0-8.03-3.62-8.03-8.03c0-.94.19-1.88.53-2.72l-1.94-.66C2.19 9.7 2 10.83 2 12c0 5.54 4.46 10 10 10s10-4.46 10-10M5.47 3.97c.85 0 1.53.71 1.53 1.5C7 6.32 6.32 7 5.47 7c-.79 0-1.5-.68-1.5-1.53c0-.79.71-1.5 1.5-1.5M18 12c0-3.33-2.67-6-6-6s-6 2.67-6 6s2.67 6 6 6s6-2.67 6-6m-3 0l-5 3V9"
+      />
+    </svg>
+    <a class="logo_link" href="{% url 'home' %}">
+      <h2 class="logo_name">MovieMash</h2>
+    </a>
+  </div>
+
+  <div class="HEADER_STUFFS">
+    <div class="SEARCH_CONTAINER">
+      <a href="{% url 'search' %}" class="SEARCH_PAGE_LINK">
+        <svg
+          class="search_icon"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          role="img"
+          width="1em"
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="m16.325 14.899l5.38 5.38a1.008 1.008 0 0 1-1.427 1.426l-5.38-5.38a8 8 0 1 1 1.426-1.426ZM10 16a6 6 0 1 0 0-12a6 6 0 0 0 0 12Z"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <div class="HAMBURGER">
+      <span class="bar_1"></span>
+      <span class="bar_2"></span>
+      <span class="bar_3"></span>
+    </div>
+  </div>
+
+  <nav class="SIDE_PAGE_NAV_CONTAINER">
+    <ul class="side_page_ul">
+      <li class="side_page_li">
+        <a href="/" class="SIDE_PAGE_LINK" id="SIDE_HOME_PAGE_LINK">
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:house-fill"
+          ></span>
+          home
+        </a>
+      </li>
+
+      <li class="side_page_li">
+        <a
+          href="{% url 'news' %}"
+          class="SIDE_PAGE_LINK"
+          id="SIDE_NEWS_PAGE_LINK"
+        >
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:newspaper-light"
+          ></span>
+          news
+        </a>
+      </li>
+      <li class="side_page_li">
+        <a
+          href="{% url 'photos' %}"
+          class="SIDE_PAGE_LINK"
+          id="SIDE_PHOTOS_PAGE_LINK"
+        >
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:google-photos-logo-light"
+          ></span>
+          photos
+        </a>
+      </li>
+      <li class="side_page_li">
+        <a
+          href="{% url 'style' %}"
+          class="SIDE_PAGE_LINK"
+          id="SIDE_STYLE_PAGE_LINK"
+        >
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:star-light"
+          ></span>
+          style
+        </a>
+      </li>
+      <li class="side_page_li">
+        <a
+          href="{% url 'gossips' %}"
+          class="SIDE_PAGE_LINK"
+          id="SIDE_GOSSIPS_PAGE_LINK"
+        >
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:apple-podcasts-logo-light"
+          ></span>
+          gossips
+        </a>
+      </li>
+      <li class="side_page_li">
+        <a
+          href="{% url 'hollywood' %}"
+          class="SIDE_PAGE_LINK"
+          id="SIDE_HOLLYWOOD_PAGE_LINK"
+        >
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:television-light"
+          ></span>
+          hollywood
+        </a>
+      </li>
+      <li class="side_page_li">
+        <a
+          href="{% url 'webstories' %}"
+          class="SIDE_PAGE_LINK"
+          id="SIDE_WEBSTORIES_PAGE_LINK"
+        >
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:vibrate-light"
+          ></span>
+          webstories
+        </a>
+      </li>
+      <li class="side_page_li">
+        <a
+          href="{% url 'boxoffice' %}"
+          class="SIDE_PAGE_LINK"
+          id="SIDE_BOXOFFICE_PAGE_LINK"
+        >
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:monitor-play-light"
+          ></span>
+          boxoffice
+        </a>
+      </li>
+      <li class="side_page_li">
+        <a
+          href="{% url 'upcomings' %}"
+          class="SIDE_PAGE_LINK"
+          id="SIDE_UPCOMINGS_PAGE_LINK"
+        >
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:fast-forward-circle-light"
+          ></span>
+          upcomings
+        </a>
+      </li>
+      <li class="side_page_li">
+        <a
+          href="{% url 'feedback' %}"
+          class="SIDE_PAGE_LINK"
+          id="SIDE_FEEDBACK_PAGE_LINK"
+        >
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:chat-dots-light"
+          ></span>
+          feedback
+        </a>
+      </li>
+      <li class="side_page_li">
+        <a
+          href="{% url 'about' %}"
+          class="SIDE_PAGE_LINK"
+          id="SIDE_ABOUT_PAGE_LINK"
+        >
+          <span
+            class="iconify side_main_page_icon"
+            data-icon="ph:address-book-light"
+          ></span>
+          about
+        </a>
+      </li>
+    </ul>
+
+    <div class="MM_SOCIAL_LINKS_CONTAINER">
+      <h3 class="follow_for_more_title"># follow MovieMash on :</h3>
+      <div class="social_side_page">
+        <a href="#####################" class="side_page_social_link">
+          <span
+            class="iconify side_social_icon"
+            data-icon="ph:instagram-logo-fill"
+          ></span>
+        </a>
+        <a href="#####################" class="side_page_social_link">
+          <span
+            class="iconify side_social_icon"
+            data-icon="ph:telegram-logo-fill"
+          ></span>
+        </a>
+        <a href="#####################" class="side_page_social_link">
+          <span
+            class="iconify side_social_icon"
+            data-icon="ph:twitter-logo-fill"
+          ></span>
+        </a>
+        <a href="#####################" class="side_page_social_link">
+          <span
+            class="iconify side_social_icon"
+            data-icon="ph:youtube-logo-fill"
+          ></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<nav class="MAIN_PAGES_CONTAINER">
+  <ul class="main_pages_ul">
+    <li class="main_pages_li">
+      <a href="/" class="MAIN_PAGE_LINK" id="HOME_PAGE_LINK">
+        <svg
+          class="MM_home_icon"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          role="img"
+          width="1em"
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 256 256"
+        >
+          <path
+            fill="currentColor"
+            d="M224 115.5V208a16.1 16.1 0 0 1-8.4 14.1a15.3 15.3 0 0 1-7.6 1.9h-48a8 8 0 0 1-8-8v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a15.9 15.9 0 0 1-12-5.4a16.9 16.9 0 0 1-4-11v-92.1a16 16 0 0 1 5.2-11.8l80-72.7a16 16 0 0 1 21.6 0l80 72.7a16 16 0 0 1 5.2 11.8Z"
+          />
+        </svg>
+        home
+      </a>
+    </li>
+
+    <li class="main_pages_li">
+      <a href="{% url 'news' %}" class="MAIN_PAGE_LINK" id="NEWS_PAGE_LINK">
+        news
+      </a>
+    </li>
+    <li class="main_pages_li">
+      <a href="{% url 'photos' %}" class="MAIN_PAGE_LINK" id="PHOTOS_PAGE_LINK">
+        photos
+      </a>
+    </li>
+    <li class="main_pages_li">
+      <a href="{% url 'style' %}" class="MAIN_PAGE_LINK" id="STYLE_PAGE_LINK">
+        style
+      </a>
+    </li>
+    <li class="main_pages_li">
+      <a
+        href="{% url 'gossips' %}"
+        class="MAIN_PAGE_LINK"
+        id="GOSSIPS_PAGE_LINK"
+      >
+        gossips
+      </a>
+    </li>
+    <li class="main_pages_li">
+      <a
+        href="{% url 'hollywood' %}"
+        class="MAIN_PAGE_LINK"
+        id="HOLLYWOOD_PAGE_LINK"
+      >
+        hollywood
+      </a>
+    </li>
+    <li class="main_pages_li">
+      <a
+        href="{% url 'webstories' %}"
+        class="MAIN_PAGE_LINK"
+        id="WEBSTORIES_PAGE_LINK"
+      >
+        webstories
+      </a>
+    </li>
+    <li class="main_pages_li">
+      <a
+        href="{% url 'boxoffice' %}"
+        class="MAIN_PAGE_LINK"
+        id="BOXOFFICE_PAGE_LINK"
+      >
+        boxoffice
+      </a>
+    </li>
+    <li class="main_pages_li">
+      <a
+        href="{% url 'upcomings' %}"
+        class="MAIN_PAGE_LINK"
+        id="UPCOMINGS_PAGE_LINK"
+      >
+        upcomings
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<script
+  class="iconify icons script"
+  src="https://code.iconify.design/2/2.2.1/iconify.min.js"
+></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+
+{% include 'slidepage.html' %}

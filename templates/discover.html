@@ -1,0 +1,128 @@
+{% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static '/css/discover.css' %}"
+/>
+<div class="discover_main_div">
+  <h2 class="discover_more_title">discover more</h2>
+
+  <div class="discover_more">
+    <div class="discover_divs">
+      <a href="{% url 'home' %}" class="discover_link">
+        <span class="iconify discover_icon" data-icon="ph:house-fill"></span>
+        home
+      </a>
+    </div>
+
+    <div class="discover_divs">
+      <a href="{% url 'news' %}" class="discover_link">
+        <span
+          class="iconify discover_icon"
+          data-icon="ph:newspaper-light"
+        ></span>
+        news
+      </a>
+    </div>
+
+    <div class="discover_divs">
+      <a href="{% url 'photos' %}" class="discover_link">
+        <span
+          class="iconify discover_icon"
+          data-icon="ph:google-photos-logo-light"
+        ></span>
+        photos
+      </a>
+    </div>
+
+    <div class="discover_divs">
+      <a href="{% url 'style' %}" class="discover_link">
+        <span class="iconify discover_icon" data-icon="ph:star-light"></span>
+        style
+      </a>
+    </div>
+
+    <div class="discover_divs">
+      <a href="{% url 'gossips' %}" class="discover_link">
+        <span
+          class="iconify discover_icon"
+          data-icon="ph:apple-podcasts-logo-light"
+        ></span>
+        gossips
+      </a>
+    </div>
+
+    <div class="discover_divs">
+      <a href="{% url 'hollywood' %}" class="discover_link">
+        <span
+          class="iconify discover_icon"
+          data-icon="ph:television-light"
+        ></span>
+        hollywood
+      </a>
+    </div>
+
+    <div class="discover_divs">
+      <a href="{% url 'webstories' %}" class="discover_link">
+        <span class="iconify discover_icon" data-icon="ph:vibrate-light"></span>
+        webstories
+      </a>
+    </div>
+
+    <div class="discover_divs">
+      <a href="{% url 'boxoffice' %}" class="discover_link">
+        <span
+          class="iconify discover_icon"
+          data-icon="ph:monitor-play-light"
+        ></span>
+        boxoffice
+      </a>
+    </div>
+
+    <div class="discover_divs">
+      <a href="{% url 'upcomings' %}" class="discover_link">
+        <span
+          class="iconify discover_icon"
+          data-icon="ph:fast-forward-circle-light"
+        ></span>
+        upcomings
+      </a>
+    </div>
+  </div>
+
+  <!-- follow social media -->
+
+  <div class="discover_social_links">
+    <h2 class="discover_social_title"># follow for more</h2>
+    <div class="discover_social_div">
+      <a href="#####################" class="discover_social_links">
+        <span
+          class="iconify discover_social_icon"
+          data-icon="ph:instagram-logo-fill"
+        ></span>
+      </a>
+      <a href="#####################" class="discover_social_links">
+        <span
+          class="iconify discover_social_icon"
+          data-icon="ph:telegram-logo-fill"
+        ></span>
+      </a>
+      <a href="#####################" class="discover_social_links">
+        <span
+          class="iconify discover_social_icon"
+          data-icon="ph:twitter-logo-fill"
+        ></span>
+      </a>
+      <a href="#####################" class="discover_social_links">
+        <span
+          class="iconify discover_social_icon"
+          data-icon="ph:youtube-logo-fill"
+        ></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="copywrite">
+    <p class="copywrite_title">&COPY; Copyright 2022 MovieMash</p>
+  </div>
+</div>

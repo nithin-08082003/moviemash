@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moviemash | photos</title>
+    <!-- css links -->
+    {% include 'basics.html' %}
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/main_theme.css' %}"
+    />
+    {% include 'photos_styles.html' %}
+  </head>
+  <body class="body">
+    {% include 'header.html' %}
+    <div class="COMPLETE_MAIN_CONTAINER">
+      <!-- page title -->
+      <div class="page_title">
+        <span class="iconify page_icon" data-icon="ph:television-light"></span>
+        <h3 class="main_title">photos</h3>
+      </div>
+
+      <div class="MAIN_top_container">
+        <!-- top post -->
+        {% for top_first in top_photos_post %}
+        <div
+          class="top_container"
+          style="background-image:url({{top_first.main_img.url}}) ;"
+        >
+          <a
+            href="{% url 'photos-detail' top_first.category_title %}"
+            class="top_link_container"
+          >
+            <p class="trending_title">#top gallery</p>
+            <div>
+              <span class="top_belongs_to">| photos</span>
+              <br />
+              <h2 class="top_headline">{{ top_first.category_title }}</h2>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+
+        <!-- other 4 posts -->
+        <div class="other_4_posts">
+          {% for four_post in four_photos_post %}
+          <div class="four_blogs">
+            <a
+              href="{% url 'photos-detail' four_post.category_title %}"
+              class="four_link_container"
+            >
+              <div class="four_div1">
+                <img class="four_image" src="{{ four_post.main_img.url }}" />
+              </div>
+              <div class="four_div2">
+                <small class="four_belongs">| photos</small>
+                <p class="four_headline">#{{ four_post.category_title }}</p>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- remaining all posts -->
+      <div class="photos_remain_main_container">
+        {% for remain_post in remain_photos_post %}
+        <div class="photos_remain_blogs">
+          <a
+            href="{% url 'photos-detail' remain_post.category_title %}"
+            class="photos_remain_link_container"
+          >
+            <img
+              class="photos_remain_image"
+              src="{{ remain_post.main_img.url }}"
+            />
+            <p class="photos_remain_headline">
+              #{{ remain_post.category_title }}
+            </p>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- discover more div -->
+      {% include 'discover.html' %}
+      <!-- js for ur in which page -->
+      <script class="photos_page">
+        var PHOTOS_PAGE_LINK = document.querySelector("#PHOTOS_PAGE_LINK");
+        var SIDE_PHOTOS_PAGE_LINK = document.querySelector(
+          "#SIDE_PHOTOS_PAGE_LINK"
+        );
+        PHOTOS_PAGE_LINK.style.borderBottom = "3px solid black";
+        PHOTOS_PAGE_LINK.style.color = "black";
+        SIDE_PHOTOS_PAGE_LINK.style.background = "black";
+        SIDE_PHOTOS_PAGE_LINK.style.color = "white";
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!-- home_second all posts -->
+<div class="home_first_main_container">
+  {% for home_second_posts in recent_second_posts %}
+  <div class="home_first_blogs">
+    <a
+      href="{% url 'detail' home_second_posts.id %}"
+      class="home_first_link_container"
+    >
+      <img class="home_first_image" src="{{ home_second_posts.image.url }}" />
+      <span class="home_first_belong"
+        >| {{ home_second_posts.category.title }}</span
+      >
+      <p class="home_first_headline">{{ home_second_posts.headline }}</p>
+      <p class="home_first_summary">{{ home_second_posts.summary }}</p>
+    </a>
+    <p class="home_first_updated">
+      | {{ home_second_posts.updated|timesince }} AGO
+    </p>
+  </div>
+  {% endfor %}
+</div>

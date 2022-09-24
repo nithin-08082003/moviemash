@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moviemash | About</title>
+    <!-- css links -->
+    {% include 'basics.html' %}
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/main_theme.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/about.css' %}"
+    />
+  </head>
+  <body class="body">
+    {% include 'header.html' %}
+    <div class="COMPLETE_MAIN_CONTAINER">
+      <!-- page title -->
+      <div class="page_title">
+        <h2 class="main_title">about</h2>
+      </div>
+
+      <!-- main about content -->
+      <div class="main_about_content">
+        <!-- my details -->
+        <div class="my_details">
+          <div class="my_div1">
+            <h1 class="my_name">Nithin k</h1>
+            <h3 class="my_founer">Founder (MovieMash.com)</h3>
+            <p class="my_email">nithinat08082003@gmail.com</p>
+            <p class="my_phone">6363250458 - bangalore</p>
+          </div>
+        </div>
+
+        <div class="about_content">
+          <h2>
+            * founded in 2022 our ambition is to provide the entertainment to
+            peoples and full fill the needs of public
+          </h2>
+          <br />
+          <h3>
+            we keep posting the latest blogs about movie news , gossips ,
+            boxoffice , upcomings , photo-gallerys , hollywood , style and many
+            more..
+          </h3>
+        </div>
+
+        <!-- main privacy policy page -->
+        <div class="privacy_policy">
+          <!-- page title -->
+          <div class="page_title">
+            <h2 class="main_title">privacy policy</h2>
+          </div>
+          <p class="main_privacy">
+            * MovieMash recognises that its customers, visitors, users, and
+            others who use www.MovieMash.com value the user , visitors privacy.
+            This Privacy Notice details important information regarding the use
+            and disclosure of User information collected on the MovieMash
+            Platform. MovieMash provides this Privacy Notice to help you make an
+            informed decision about whether to use or continue using the
+            MovieMash. This Privacy Notice is incorporated into and is subject
+            to the MovieMash Terms of Use. the terms of this Privacy Notice and
+            our Terms of Use. Please note that any video, image, or other
+            content posted at the direction of Users onto the MovieMash.com
+            becomes published content and is not considered personally
+            identifiable information subject to this Privacy Notice.
+          </p>
+          <br />
+          <p class="privacy_simple">
+            * we mention that we don't collect any user information , visitors
+            privacy we only collect the user name while submittimg their
+            feedback and we recommended that if your below 13years don't
+            continue to watch moviemash.com
+          </p>
+          <br />
+          <p class="privacy_for_add">
+            * MovieMash allows other companies, called third-party ad servers or
+            ad networks, to serve advertisements within the MovieMash.com. These
+            third-party ad servers or ad networks use technology to send,
+            directly to your browser, the advertisements and links that appear
+            on the MovieMash.com. They automatically receive your IP address
+            when this happens. They may also use other technologies (such as
+            cookies, JavaScript, or Web Beacons) to measure the effectiveness of
+            their advertisements and to personalize the advertising content you
+            see. MovieMash does not provide any personally identifiable
+            information to these third-party ad servers or ad networks without
+            your consent or except as part of a specific program or feature for
+            which you will have the ability to opt-in or opt-out. However,
+            please note that if an advertiser asks MovieMash to show an
+            advertisement to a certain audience (for example, men ages 18-34) or
+            audience segment (for example, men ages 18-24 who have viewed
+            certain channels of content) and you respond to that advertisement,
+            the advertiser or ad-server may conclude that you fit the
+            description of the audience they are trying to reach. The advertiser
+            may also use information regarding your use of the MovieMash such as
+            the number of times you viewed an ad (but not any personally
+            identifiable information), to determine which ads to deliver to you.
+          </p>
+        </div>
+      </div>
+
+      <!-- discover more div -->
+      <div class="about_discover">{% include 'discover.html' %}</div>
+    </div>
+    <!-- js for ur in which page -->
+    <script class="news_page">
+      var SIDE_ABOUT_PAGE_LINK = document.querySelector(
+        "#SIDE_ABOUT_PAGE_LINK"
+      );
+      SIDE_ABOUT_PAGE_LINK.style.background = "black";
+      SIDE_ABOUT_PAGE_LINK.style.color = "white";
+    </script>
+  </body>
+</html>

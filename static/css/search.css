@@ -1,0 +1,309 @@
+.SEARCH_MAIN_CONTAINER {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 1400px) {
+  .SEARCH_MAIN_CONTAINER {
+    width: 70%;
+  }
+}
+@media (max-width: 1250px) {
+  .SEARCH_MAIN_CONTAINER {
+    width: 80%;
+  }
+}
+@media (max-width: 1000px) {
+  .SEARCH_MAIN_CONTAINER {
+    width: 95%;
+  }
+}
+@media (max-width: 800px) {
+  .SEARCH_MAIN_CONTAINER {
+    width: 100%;
+  }
+}
+/* search conatiner stuffs */
+.searched_result_container {
+  width: 100%;
+}
+.search_page_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid black;
+  text-align: center;
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+.search_title {
+  color: black;
+  text-transform: capitalize;
+}
+.search_page_icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 5px;
+}
+.search_input_div {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+}
+.search_form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.search_input {
+  width: 100%;
+  flex-basis: 90%;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  border: 2px solid black;
+}
+.search_input_line {
+  content: "";
+  width: 2.5px;
+  height: 35px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: black;
+}
+.search_btn {
+  width: 100%;
+  flex-basis: 10%;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px;
+  border-radius: 20px;
+  border: 2px solid black;
+  background-color: rgb(227, 236, 242);
+}
+.searched_results_title {
+  text-align: center;
+  padding: 8px;
+  text-transform: capitalize;
+}
+.searched_total_posts {
+  text-align: center;
+  text-transform: capitalize;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+.searched_total_posts p {
+  font-weight: 500;
+}
+.searched_total_posts span {
+  font-weight: 600;
+}
+.search_for_title {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 19px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.search_discover {
+  padding: 5px;
+}
+.search_discover .discover_main_div {
+  border-radius: 20px;
+  padding-top: 5px;
+}
+
+/* real style for photos and posts */
+.photo_results {
+  width: 100%;
+}
+.searched_photos_results {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.photos_divs {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.searched_photo_links {
+  text-decoration: none;
+}
+.searched_photos_img {
+  min-width: 250px;
+  max-width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.photos_title {
+  color: blue;
+  font-size: 14px;
+  font-weight: 500;
+}
+.searched_photos_title {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* btns left right photos scroll */
+.horizontal-scroll {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.left-btn {
+  position: relative;
+  left: 0;
+  top: 180px;
+  border-radius: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px black;
+}
+.right-btn {
+  position: relative;
+  left: 0px;
+  top: 180px;
+  border-radius: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px black;
+}
+.left_arrow,
+.right_arrow {
+  width: 22px;
+  height: 22px;
+}
+
+/* end of scroll photos by btn*/
+
+/* 
+style for all posts
+*/
+.searched_all_posts_div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px;
+}
+.searched_posts_link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  background-color: rgb(227, 236, 242);
+  border-radius: 20px;
+  padding-right: 5px;
+}
+.searched_all_img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin-right: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.searched_allposts_img_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.searched_all_results {
+  margin-bottom: 10px;
+}
+.allposts_belong {
+  color: blue;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.searched_all_headline {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  text-transform: capitalize;
+}
+.searched_posts_description {
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* all posts for small device */
+
+@media (max-width: 600px) {
+  .searched_all_posts_div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+  .searched_all_img {
+    width: 150px;
+    height: 250px;
+    object-fit: cover;
+    margin-right: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .allposts_belong {
+    color: blue;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .searched_all_headline {
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    text-transform: capitalize;
+  }
+  .searched_posts_description {
+    color: black;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Moviemash | {{ detail_post.category.title }} | " {{ detail_post.headline}}
+      " -- check out now ::
+    </title>
+    <meta
+      property="og:title"
+      content=" ' {{ detail_post.headline}} ' - check out now >> "
+    />
+    <meta property="og:url" content="{% url 'detail' detail_post.id %}" />
+    <meta property="og:image" content="{{ detail_post.image.url }}" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:description"
+      content="{{ detail_post.description|safe|truncatewords:10 }}"
+    />
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62f085ca1ba01b8b"
+    ></script>
+    <!-- css links -->
+    {% include 'basics.html' %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/detail.css' %}"
+    />
+  </head>
+  <body class="body">
+    {% include 'header.html' %}
+    <div class="COMPLETE_MAIN_CONTAINER">
+      <div class="COMPLETE_DETAIL_CONTAINER">
+        <!-- main detail page -->
+        <div class="detail_conatiner">
+          <!-- first detail container  -->
+          <div class="first_detail">
+            <!-- navigations -->
+            <div class="detail_navigations">
+              <a class="detail_home_nav" href="/">home</a>
+              <span> >> </span>
+              <p class="detail_nav">{{ detail_post.category.title }}</p>
+              <span> >> </span>
+              <p class="detail_headline_nav">
+                " {{ detail_post.headline|truncatewords:15}} "
+              </p>
+            </div>
+
+            <!-- page title -->
+            <div class="page_title">
+              <h3 class="main_title">{{ detail_post.category.title }}</h3>
+            </div>
+
+            <h2 class="detail_headline">
+              <span
+                class="iconify quotes"
+                data-icon="bxs:quote-right"
+                data-rotate="180deg"
+                data-flip="vertical"
+              ></span>
+              {{ detail_post.headline }}
+              <span class="iconify quotes" data-icon="bxs:quote-right"></span>
+            </h2>
+            <p class="detail_updated">
+              published on | {{ detail_post.updated }}
+            </p>
+            <img class="detail_img" src="{{ detail_post.image.url }}" />
+            <small class="img_creadit">
+              image-credit : {{ detail_post.image_credit }}
+            </small>
+
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_inline_share_toolbox_6hse"></div>
+
+            {% if detail_post.summary %}
+            <p class="detail_summary">" {{ detail_post.summary }} "</p>
+            {% endif %}
+            <!-- description -->
+            <div class="first_detail_description">
+              {{ detail_post.description|safe }}
+            </div>
+            <div class="detail_embed">{{ detail_post.embed|safe }}</div>
+          </div>
+          <!-- next posts  -->
+          {% for next_posts in next_random_posts %}
+          <div class="next_posts">
+            <h3 class="next_post_title">next</h3>
+            <p class="next_category">
+              &laquo;&nbsp; {{ next_posts.category }} &nbsp;&raquo;
+            </p>
+            <h2 class="detail_headline">
+              <span
+                class="iconify quotes"
+                data-icon="bxs:quote-right"
+                data-rotate="180deg"
+                data-flip="vertical"
+              ></span>
+              {{ next_posts.headline }}
+              <span class="iconify quotes" data-icon="bxs:quote-right"></span>
+            </h2>
+            <p class="detail_updated">
+              published on | {{ next_posts.updated }}
+            </p>
+            <img class="detail_img" src="{{ next_posts.image.url }}" />
+            {% if next_posts.summary %}
+            <p class="detail_summary">" {{ next_posts.summary }} "</p>
+            {% endif %}
+            <span class="detail_description">
+              {{ next_posts.description|truncatewords:40|safe }}
+              <a class="read_more" href="{% url 'detail' next_posts.id %}">
+                read more
+              </a>
+            </span>
+          </div>
+          {% endfor %}
+        </div>
+        <!-- detail page sidebar  -->
+        <div class="recent_sidebar">
+          <!-- recent bar title  -->
+          <div class="sidebar_recent_title">
+            <h3 class="recent_bar_title">recent bar</h3>
+            <svg
+              class="sidebar_recent_icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 20V4m-7 9l7 7l7-7"
+              />
+            </svg>
+          </div>
+          <!-- recent sidebar photos -->
+          <div class="horizontal-scroll">
+            <button class="left-btn" onclick="scrollL()">
+              <svg
+                class="left_arrow"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M10.25 3.75L5.75 8l4.5 4.25"
+                />
+              </svg>
+            </button>
+            <button class="right-btn" onclick="scrollR()">
+              <svg
+                class="right_arrow"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M5.75 12.25L10.25 8l-4.5-4.25"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="recent_photos_detail_container">
+            {% for detail_recent_photos in recent_photos %}
+            <div class="recent_photos_divs">
+              <a
+                class="recent_photo_links"
+                href="{% url 'photos-detail' detail_recent_photos.category_title %}"
+              >
+                <img
+                  class="recent_photos_img"
+                  src="{{ detail_recent_photos.main_img.url }}"
+                />
+                <div class="recent_photos_stuffs_div">
+                  <p class="recent_photos_title">
+                    #{{ detail_recent_photos.category_title }}
+                  </p>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+
+          <!-- recent sidebar allposts -->
+          <div class="recent_allposts_container">
+            {% for recent_allpost in recent_posts %}
+            <div class="recent_sidebar_blogs">
+              <a
+                href="{% url 'detail' recent_allpost.id %}"
+                class="recent_link_container"
+              >
+                <img
+                  class="recent_image"
+                  src="{{ recent_allpost.image.url }}"
+                />
+                <div class="recent_detail_texts">
+                  <span class="recent_belong">
+                    | {{ recent_allpost.category.title }}</span
+                  >
+                  <p class="recent_headline">{{ recent_allpost.headline }}</p>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62f085ca1ba01b8b"
+    ></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+    {% include 'where_detail.html' %}
+    <script class="scroll_effect_arrows_4_photos">
+      var main = document.querySelector(".recent_photos_detail_container");
+
+      function scrollL() {
+        var left = document.querySelector(".left-btn");
+        main.scrollBy(-300, 0);
+      }
+      function scrollR() {
+        var right = document.querySelector(".right-btn");
+        main.scrollBy(300, 0);
+      }
+    </script>
+    <script
+      src="https://kit.fontawesome.com/51c37b9edd.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

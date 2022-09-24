@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      MovieMash | photos-gallery :: " {{ photo_cat }} " | gallery - check this
+      now...
+    </title>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62f085ca1ba01b8b"
+    ></script>
+    <!-- css links -->
+    {% include 'basics.html' %}
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/photos_detail.css' %}"
+    />
+    <!-- full image view style -->
+    <style>
+      .full_img_container {
+        position: fixed;
+        top: 30px;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        height: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .full_img_container .full_img {
+        width: auto;
+        max-height: 600px;
+        padding: 10px;
+      }
+      .close_tag {
+        color: white;
+        font-size: 12px;
+      }
+      @media (max-width: 500px) {
+        .full_img_container {
+          position: fixed;
+          top: 20px;
+          left: 0;
+        }
+        .full_img_container .full_img {
+          width: 100%;
+          max-height: 600px;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body class="body photo_body">
+    {% include 'header.html' %}
+    <div class="COMPLETE_MAIN_CONTAINER">
+      <!-- gallery main page starts -->
+      <div class="gallery_detail_conatiner">
+        <!-- gallery navigations -->
+        <small class="gallery_navigations">
+          <a class="gallery_home_nav" href="/">home</a>
+          <span>>></span>
+          <p class="gallery_nav">photos</p>
+          <span>>></span>
+          <span class="gallery_headline_nav">
+            " {{ photo_cat }} - gallery "
+          </span>
+        </small>
+
+        <!-- gallery title -->
+        <div class="gallery_page_title">
+          <span
+            class="iconify gallery_page_icon"
+            data-icon="ph:google-photos-logo-light"
+          ></span>
+          <h3 class="gallery_main_title">{{ photo_cat }}</h3>
+        </div>
+
+        <p class="total_photos">total {{ img_gallery_count }} photos</p>
+
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div id="share_gallery" class="addthis_inline_share_toolbox_6hse"></div>
+
+        <div class="copyright_imgs_notes">
+          <p class="copywrite_titles">
+            some images may subjected to copyrights
+          </p>
+          <p class="copywrite_titles">
+            images are upload by users and other social platforms
+          </p>
+        </div>
+
+        <!-- other photo gallerys -->
+        <div class="horizontal-scroll">
+          <button class="left-btn" onclick="scrollL()">
+            <svg
+              class="left_arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M10.25 3.75L5.75 8l4.5 4.25"
+              />
+            </svg>
+          </button>
+          <button class="right-btn" onclick="scrollR()">
+            <svg
+              class="right_arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5.75 12.25L10.25 8l-4.5-4.25"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="random_photos_detail_container">
+          {% for detail_random_photos in random_photos %}
+          <div class="random_photos_divs">
+            <a
+              class="random_photo_links"
+              href="{% url 'photos-detail' detail_random_photos.category_title %}"
+            >
+              <img
+                class="random_photos_img"
+                src="{{ detail_random_photos.main_img.url }}"
+              />
+              <div class="random_photos_stuffs_div">
+                <p class="random_photos_title">
+                  #{{ detail_random_photos.category_title }}
+                </p>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="full_img_container">
+          <img
+            class="full_img"
+            src="https://tse4.mm.bing.net/th?id=OIP.CzmLESORyJINrlC-s8yk-AHaJ4&pid=Api&P=0&w=152&h=202"
+          />
+          <p class="close_tag">tap anywhere to close</p>
+        </div>
+
+        <div class="gallery photo_gallery photo_gallery_container">
+          {% for gallery in detail_photo_post %}
+          <img
+            class="gallery_imgs"
+            onclick="openFullImg(this.src)"
+            src="{{ gallery.gallery_images.url }}"
+            alt="#{{ gallery.category }}-img"
+          />
+          {% endfor %}
+        </div>
+      </div>
+      <!-- go to top -->
+      <a class="go_to_top" title="go to top" href="#">
+        <svg
+          class="go_to_top_icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 1024 1024"
+        >
+          <path
+            fill="currentColor"
+            d="M104.704 685.248a64 64 0 0 0 90.496 0l316.8-316.8l316.8 316.8a64 64 0 0 0 90.496-90.496L557.248 232.704a64 64 0 0 0-90.496 0L104.704 594.752a64 64 0 0 0 0 90.496z"
+          />
+        </svg>
+      </a>
+      {% include 'discover.html' %}
+    </div>
+    <!-- show ur in which page -->
+    <script>
+      var Photos_header_link = document.querySelector("#PHOTOS_PAGE_LINK");
+      var Side_photos_link = document.querySelector("#SIDE_PHOTOS_PAGE_LINK");
+
+      Photos_header_link.style.borderBottom = "3px solid black";
+      Photos_header_link.style.color = "black";
+      Side_photos_link.style.background = "black";
+      Side_photos_link.style.color = "white";
+    </script>
+    <!-- full image view js -->
+    <script>
+      var fullImgContainer = document.querySelector(".full_img_container");
+      var fullImg = document.querySelector(".full_img");
+      var photoBody = document.querySelector(".photo_body");
+      var discover = document.querySelector(".discover_main_div");
+      var goTop = document.querySelector(".go_to_top");
+
+      fullImgContainer.addEventListener("click", () => {
+        fullImgContainer.style.display = "none";
+        photoBody.style.overflow = "scroll";
+        discover.style.display = "block";
+        goTop.style.display = "block";
+      });
+
+      function openFullImg(pic) {
+        fullImgContainer.style.display = "flex";
+        fullImgContainer.style.flexDirection = "column";
+        fullImg.src = pic;
+        photoBody.style.overflow = "hidden";
+        discover.style.display = "none";
+        goTop.style.display = "none";
+      }
+
+      function closeFullImg() {
+        fullImgContainer.style.display = "none";
+      }
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62f085ca1ba01b8b"
+    ></script>
+    <!--  -->
+    <script class="scroll_effect_arrows_4_photos">
+      var main = document.querySelector(".random_photos_detail_container");
+
+      function scrollL() {
+        var left = document.querySelector(".left-btn");
+        main.scrollBy(-300, 0);
+      }
+      function scrollR() {
+        var right = document.querySelector(".right-btn");
+        main.scrollBy(300, 0);
+      }
+    </script>
+  </body>
+</html>

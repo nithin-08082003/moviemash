@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moviemash | FeedBack</title>
+    <!-- css links -->
+    {% include 'basics.html' %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/feedback.css' %}"
+    />
+  </head>
+  <body class="body">
+    {% include 'header.html' %}
+    <div class="FEEDBACK_MAIN_CONTAINER">
+      <!-- page title -->
+      <div class="page_title">
+        <span class="iconify page_icon" data-icon="ph:chat-dots-light"></span>
+        <h3 class="main_title">feedback</h3>
+      </div>
+
+      <!-- thank you popup -->
+      <div class="popup">
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <h3 class="msg">{{ message }}</h3>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+
+      <!-- feedback form -->
+      <form class="feedback_form" action="" method="POST">
+        <!-- csrf token -->
+        {% csrf_token %}
+        <div class="total_div">
+          <div class="input_name_div">
+            <label class="name_title" for="id_name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              maxlength="50"
+              required=""
+              id="id_name"
+              placeholder="enter your name..."
+              class="name_input"
+            />
+          </div>
+          <div class="feedback_text_div">
+            <label class="feedback_title" for="id_feedback_text"
+              >Feedback:</label
+            >
+            <textarea
+              name="feedback_text"
+              cols="40"
+              rows="10"
+              maxlength="300"
+              required=""
+              id="id_feedback_text"
+              placeholder="your feedback..."
+              class="feedback_input"
+            ></textarea>
+          </div>
+          <input class="send_btn" type="submit" value="SEND" />
+        </div>
+      </form>
+
+      <!-- discover more div -->
+      <div class="feedback_discover">{% include 'discover.html' %}</div>
+    </div>
+    <!-- js for ur in which page -->
+    <script class="feedback_page">
+      var SIDE_FEEDBACK_PAGE_LINK = document.querySelector(
+        "#SIDE_FEEDBACK_PAGE_LINK"
+      );
+      SIDE_FEEDBACK_PAGE_LINK.style.background = "black";
+      SIDE_FEEDBACK_PAGE_LINK.style.color = "white";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+
+
+<!-- recent sidebar photos -->
+<div class="horizontal-scroll">
+  <button class="left-btn" onclick="scrollL()">
+    <svg
+      class="left_arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        d="M10.25 3.75L5.75 8l4.5 4.25"
+      />
+    </svg>
+  </button>
+  <button class="right-btn" onclick="scrollR()">
+    <svg
+      class="right_arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        d="M5.75 12.25L10.25 8l-4.5-4.25"
+      />
+    </svg>
+  </button>
+</div>
+
+<div class="random_photos_detail_container">
+  {% for detail_random_photos in home_random_photos %}
+  <div class="random_photos_divs">
+    <a
+      class="random_photo_links"
+      href="{% url 'photos-detail' detail_random_photos.category_title %}"
+    >
+      <img
+        class="random_photos_img"
+        src="{{ detail_random_photos.main_img.url }}"
+      />
+      <div class="random_photos_stuffs_div">
+        <p class="random_photos_title">
+          #{{ detail_random_photos.category_title }}
+        </p>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- script for home photos scroll -->
+
+<script class="scroll_effect_arrows_4_photos">
+  var main = document.querySelector(".random_photos_detail_container");
+
+  function scrollL() {
+    var left = document.querySelector(".left-btn");
+    main.scrollBy(-300, 0);
+  }
+  function scrollR() {
+    var right = document.querySelector(".right-btn");
+    main.scrollBy(300, 0);
+  }
+</script>

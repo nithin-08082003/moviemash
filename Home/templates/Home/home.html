@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieMash | Deep Dive Into Entertainment</title>
+    <!-- css links -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/home/home.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/home/home_photos.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/home/home_upcomings.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/home/home_first_posts.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/home/home_random_pics.css' %}"
+    />
+    {% include 'basics.html' %}
+  </head>
+  <body class="body">
+    {% include 'header.html' %}
+    <div class="COMPLETE_MAIN_CONTAINER">
+      <!-- top container  -->
+      {% include 'top_container.html' %}
+      <!-- rounded photos -->
+      {% include 'home_photos.html' %}
+      <!-- first home 6 posts -->
+      {% include 'first_home_posts.html' %}
+      <!-- home upcomings  -->
+      {% include 'home_upcomings.html' %}
+      <!-- recent 3 photo pics -->
+      {% include 'random_pics.html' %}
+      <!-- home second 6 posts -->
+      {% include 'second_home_posts.html' %}
+      <!-- last home posts -->
+      {% include 'last_home_posts.html' %}
+      <!-- discover more div -->
+      {% include 'discover.html' %}
+    </div>
+    <!-- js for ur in which page -->
+    <script class="HOME_page">
+      var HOME_PAGE_LINK = document.querySelector("#HOME_PAGE_LINK");
+      var SIDE_HOME_PAGE_LINK = document.querySelector("#SIDE_HOME_PAGE_LINK");
+      HOME_PAGE_LINK.style.borderBottom = "3px solid black";
+      HOME_PAGE_LINK.style.color = "black";
+      SIDE_HOME_PAGE_LINK.style.background = "black";
+      SIDE_HOME_PAGE_LINK.style.color = "white";
+    </script>
+  </body>
+</html>

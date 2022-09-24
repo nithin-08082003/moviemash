@@ -1,0 +1,39 @@
+<div class="MAIN_top_container">
+  <!-- top post -->
+  <div
+    class="top_container"
+    style="
+      background-image: url(https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg);
+    "
+  >
+    <a href="/" class="top_link_container">
+      <p class="trending_title">#today top</p>
+      <div>
+        <span class="top_belongs_to">| style</span>
+        <br />
+        <h2 class="top_headline">
+          " the today top basic home container style , hollywood and the content
+          "
+        </h2>
+      </div>
+    </a>
+  </div>
+
+  <!-- other 4 posts -->
+  <div class="other_4_posts">
+    {% for four_post in four_recent_posts %}
+    <div class="four_blogs">
+      <a href="{% url 'detail' four_post.id %}" class="four_link_container">
+        <div class="four_div1">
+          <img class="four_image" src="{{ four_post.image.url }}" />
+        </div>
+        <div class="four_div2">
+          <small class="four_belongs">| {{ four_post.category }}</small>
+          <p class="four_headline">{{ four_post.headline|truncatewords:8 }}</p>
+          <p class="four_updated">| {{ four_post.updated|timesince }} AGO</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>

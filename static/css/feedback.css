@@ -1,0 +1,150 @@
+.FEEDBACK_MAIN_CONTAINER {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 1400px) {
+  .FEEDBACK_MAIN_CONTAINER {
+    width: 70%;
+  }
+}
+@media (max-width: 1250px) {
+  .FEEDBACK_MAIN_CONTAINER {
+    width: 80%;
+  }
+}
+@media (max-width: 1000px) {
+  .FEEDBACK_MAIN_CONTAINER {
+    width: 95%;
+  }
+}
+@media (max-width: 800px) {
+  .FEEDBACK_MAIN_CONTAINER {
+    width: 100%;
+  }
+}
+/* 
+ page title 
+*/
+.page_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom: 2px solid black;
+}
+.page_icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+.main_title {
+  text-transform: capitalize;
+}
+.feedback_discover {
+  padding: 15px;
+}
+.feedback_discover .discover_main_div {
+  border-radius: 20px;
+}
+
+/* main styles feedback form */
+.feedback_form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding-bottom: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-left: 15px;
+}
+
+.input_name_div,
+.feedback_text_div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 10px;
+}
+.name_title,
+.feedback_title {
+  padding-left: 3px;
+  padding-bottom: 5px;
+  font-weight: 500;
+  color: black;
+}
+.name_input {
+  width: 100%;
+  border-radius: 20px;
+  outline: none;
+  padding-left: 12px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  border: 2px solid black;
+}
+.feedback_input {
+  width: 100%;
+  border-radius: 20px;
+  outline: none;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: white;
+  border: 2px solid black;
+}
+.total_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.send_btn {
+  width: 100px;
+  margin-top: 20px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  color: white;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 4px;
+  background-color: black;
+}
+.send_btn:active {
+  background-color: white;
+  color: black;
+}
+.popup {
+  text-align: center;
+  text-transform: capitalize;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 0px;
+}
+.msg {
+  color: black;
+}

@@ -1,0 +1,89 @@
+<div class="some_pic_title_div">
+  <h2 class="random_pics_title">#some pics</h2>
+  <svg
+    class="random_right_arrow"
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1.5"
+      d="M5.75 12.25L10.25 8l-4.5-4.25"
+    />
+  </svg>
+</div>
+
+<div class="horizontal-scroll-2nd">
+  <button class="left-btn-2nd" onclick="scrollL2()">
+    <svg
+      class="left_arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        d="M10.25 3.75L5.75 8l4.5 4.25"
+      />
+    </svg>
+  </button>
+  <button class="right-btn-2nd" onclick="scrollR2()">
+    <svg
+      class="right_arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        d="M5.75 12.25L10.25 8l-4.5-4.25"
+      />
+    </svg>
+  </button>
+</div>
+
+<div class="random_main_div">
+  {% for random_img in random_pics %}
+  <div class="random_img_div">
+    <a
+      class="random_img_link"
+      href="{% url 'photos-detail' random_img.photo_category %}"
+    >
+      <img class="random_img" src="{{ random_img.gallery_images.url }}" />
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- script for home photos scroll -->
+
+<script class="scroll_effect_arrows_4_photos">
+  var main2nd = document.querySelector(".random_main_div");
+
+  function scrollL2() {
+    var left = document.querySelector(".left-btn-2nd");
+    main2nd.scrollBy(-600, 0);
+  }
+  function scrollR2() {
+    var right = document.querySelector(".right-btn-2nd");
+    main2nd.scrollBy(600, 0);
+  }
+</script>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moviemash | style</title>
+    <!-- css links -->
+    {% include 'basics.html' %}
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/main_theme.css' %}"
+    />
+  </head>
+  <body class="body">
+    {% include 'header.html' %}
+    <div class="COMPLETE_MAIN_CONTAINER">
+      <!-- page title -->
+      <div class="page_title">
+        <span class="iconify page_icon" data-icon="ph:star-light"></span>
+        <h3 class="main_title">style</h3>
+      </div>
+
+      <div class="MAIN_top_container">
+        <!-- top post -->
+        {% for top_first in top_post %}
+        <div
+          class="top_container"
+          style="background-image:url({{top_first.image.url}}) ;"
+        >
+          <a href="{% url 'detail' top_first.id %}" class="top_link_container">
+            <p class="trending_title">#top style</p>
+            <div>
+              <span class="top_belongs_to">| style</span>
+              <br />
+              <h2 class="top_headline">{{ top_first.headline }}</h2>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+
+        <!-- other 4 posts -->
+        <div class="other_4_posts">
+          {% for four_post in four_posts %}
+          <div class="four_blogs">
+            <a
+              href="{% url 'detail' four_post.id %}"
+              class="four_link_container"
+            >
+              <div class="four_div1">
+                <img class="four_image" src="{{ four_post.image.url }}" />
+              </div>
+              <div class="four_div2">
+                <small class="four_belongs">| style</small>
+                <p class="four_headline">
+                  {{ four_post.headline|truncatewords:8 }}
+                </p>
+                <p class="four_updated">
+                  | {{ four_post.updated|timesince }} AGO
+                </p>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- remaining all posts -->
+      <div class="remain_main_container">
+        {% for remain_post in remain_posts %}
+        <div class="remain_blogs">
+          <a
+            href="{% url 'detail' remain_post.id %}"
+            class="remain_link_container"
+          >
+            <img class="remain_image" src="{{ remain_post.image.url }}" />
+            <p class="remain_headline">{{ remain_post.headline }}</p>
+            <p class="remain_summary">{{ remain_post.summary }}</p>
+          </a>
+          <p class="remain_updated">
+            | {{ remain_post.updated|timesince }} AGO
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- discover more div -->
+      {% include 'discover.html' %}
+      <!-- js for ur in which page -->
+      <script class="style_page">
+        var STYLE_PAGE_LINK = document.querySelector("#STYLE_PAGE_LINK");
+        var SIDE_STYLE_PAGE_LINK = document.querySelector(
+          "#SIDE_STYLE_PAGE_LINK"
+        );
+        STYLE_PAGE_LINK.style.borderBottom = "3px solid black";
+        STYLE_PAGE_LINK.style.color = "black";
+        SIDE_STYLE_PAGE_LINK.style.background = "black";
+        SIDE_STYLE_PAGE_LINK.style.color = "white";
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+/* 
+
+random photos 
+
+*/
+.random_pics_title {
+  text-align: center;
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+.random_main_div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow: scroll;
+  margin-bottom: 10px;
+}
+.random_img_link {
+  text-decoration: none;
+}
+.random_img {
+  width: auto;
+  height: auto;
+  max-height: 500px;
+}
+.random_right_arrow {
+  display: none;
+}
+
+/* btns left right photos scroll */
+.horizontal-scroll-2nd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.left-btn-2nd {
+  border-radius: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 2px 0px black;
+}
+.right-btn-2nd {
+  border-radius: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 0px 2px 0px black;
+}
+@media (max-width: 500px) {
+  .horizontal-scroll-2nd {
+    display: none;
+  }
+
+  .random_pics_title {
+    text-align: left;
+    margin-left: 5px;
+    margin-bottom: 3px;
+  }
+  .some_pic_title_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .random_right_arrow {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+  }
+}

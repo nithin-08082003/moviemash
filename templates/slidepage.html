@@ -1,0 +1,16 @@
+<script>
+  var SidePage = document.querySelector(".SIDE_PAGE_NAV_CONTAINER");
+  var Hamburger = document.querySelector(".HAMBURGER");
+  var Body = document.querySelector(".body");
+
+  var CompleteMainContainer = document.querySelector(
+    ".COMPLETE_MAIN_CONTAINER"
+  );
+
+  Hamburger.addEventListener("click", () => {
+    SidePage.classList.toggle("toggle_burger");
+    Hamburger.classList.toggle("close_burger");
+
+    Body.classList.toggle("body_scrolling");
+  });
+</script>

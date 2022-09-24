@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moviemash | Search</title>
+    <!-- css links -->
+    {% include 'basics.html' %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/css/search.css' %}"
+    />
+  </head>
+  <body class="body">
+    {% include 'header.html' %}
+    <div class="SEARCH_MAIN_CONTAINER">
+      <!-- search page title -->
+      <div class="search_page_title">
+        <svg
+          class="search_page_icon"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          role="img"
+          width="1em"
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="m16.325 14.899l5.38 5.38a1.008 1.008 0 0 1-1.427 1.426l-5.38-5.38a8 8 0 1 1 1.426-1.426ZM10 16a6 6 0 1 0 0-12a6 6 0 0 0 0 12Z"
+          />
+        </svg>
+        <h3 class="search_title">Search</h3>
+      </div>
+      <!-- search input div -->
+      <div class="search_input_div">
+        <form class="search_form" action="{% url 'search' %}" method="POST">
+          {% csrf_token %}
+          <input
+            class="search_input"
+            name="searched"
+            type="search"
+            placeholder="Search...."
+          />
+          <span class="search_input_line"></span>
+          <button class="search_btn" type="submit">SEARCH</button>
+        </form>
+      </div>
+
+      {% if searched %}
+      <h1 class="searched_results_title">
+        searched results for: "{{ searched }}"
+      </h1>
+      <!-- total searched results  -->
+      <div class="searched_total_posts">
+        <p class="total_title">total :</p>
+        <div>
+          <span>{{ total_allposts }} posts</span> |
+          <span>{{ total_photos_posts }} photo gallery </span>
+        </div>
+      </div>
+
+      {% if search_photo_posts %}
+      <div class="photos_results">
+        <div class="horizontal-scroll">
+          <button class="left-btn" onclick="scrollL()">
+            <svg
+              class="left_arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M10.25 3.75L5.75 8l4.5 4.25"
+              />
+            </svg>
+          </button>
+          <button class="right-btn" onclick="scrollR()">
+            <svg
+              class="right_arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5.75 12.25L10.25 8l-4.5-4.25"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="searched_photos_results">
+          {% for search_photos in search_photo_posts %}
+          <div class="photos_divs">
+            <a
+              class="searched_photo_links"
+              href="{% url 'photos-detail' search_photos.category_title %}"
+            >
+              <img
+                class="searched_photos_img"
+                src="{{ search_photos.main_img.url }}"
+                alt=""
+              />
+              <div class="photos_search_stuffs_div">
+                <span class="photos_title"> | Photos </span>
+                <p class="searched_photos_title">
+                  #{{ search_photos.category_title }}
+                </p>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- search results for allposts -->
+      <div class="searched_all_posts_div">
+        {% for search in search_allposts %}
+        <div class="searched_all_results">
+          <a class="searched_posts_link" href="{% url 'detail' search.id %}">
+            <div class="searched_allposts_img_div">
+              <img class="searched_all_img" src="{{ search.image.url }}" />
+            </div>
+            <div class="searched_posts_stuffs">
+              <small class="allposts_belong">| {{ search.category }}</small>
+              <p class="searched_all_headline">{{ search.headline }}</p>
+              <span class="searched_posts_description"
+                >{{ search.description|safe|truncatewords:10 }}</span
+              >
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      <!--  -->
+      {% else %}
+      <!-- now search -->
+      <p class="search_for_title">search for latest posts and photo gallerys</p>
+      {% endif %}
+      <!--  -->
+      <div class="search_discover">{% include 'discover.html' %}</div>
+    </div>
+
+    <script class="scroll_effect_arrows_4_photos">
+      var main = document.querySelector(".searched_photos_results");
+
+      function scrollL() {
+        var left = document.querySelector(".left-btn");
+        main.scrollBy(-260, 0);
+      }
+      function scrollR() {
+        var right = document.querySelector(".right-btn");
+        main.scrollBy(260, 0);
+      }
+    </script>
+  </body>
+</html>

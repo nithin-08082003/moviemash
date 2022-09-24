@@ -1,0 +1,21 @@
+<!-- home_last all posts -->
+<div class="home_first_main_container">
+  {% for home_last_posts in recent_last_posts %}
+  <div class="home_first_blogs">
+    <a
+      href="{% url 'detail' home_last_posts.id %}"
+      class="home_first_link_container"
+    >
+      <img class="home_first_image" src="{{ home_last_posts.image.url }}" />
+      <span class="home_first_belong"
+        >| {{ home_last_posts.category.title }}</span
+      >
+      <p class="home_first_headline">{{ home_last_posts.headline }}</p>
+      <p class="home_first_summary">{{ home_last_posts.summary }}</p>
+    </a>
+    <p class="home_first_updated">
+      | {{ home_last_posts.updated|timesince }} AGO
+    </p>
+  </div>
+  {% endfor %}
+</div>

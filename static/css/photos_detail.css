@@ -1,0 +1,195 @@
+.gallery_detail_conatiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/*
+      gallery navigations
+  */
+.gallery_navigations {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  font-size: 12px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  padding: 10px;
+  text-transform: capitalize;
+}
+.gallery_home_nav {
+  text-decoration: none;
+  color: blue;
+  margin-right: 5px;
+}
+.gallery_nav {
+  text-decoration: none;
+  color: black;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.gallery_headline_nav {
+  white-space: nowrap;
+  margin-left: 5px;
+  color: grey;
+}
+/* 
+      gallery page title 
+  */
+.gallery_page_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+  margin-bottom: 3px;
+  border-bottom: 2px solid black;
+}
+.gallery_page_icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+.gallery_main_title {
+  text-transform: capitalize;
+  text-align: center;
+}
+#share_gallery {
+  margin-top: 5px;
+  text-align: center;
+}
+/*
+  copyright_imgs_notes
+   */
+.copyright_imgs_notes {
+  margin-bottom: 10px;
+}
+.copywrite_titles {
+  font-size: 10px;
+  text-align: center;
+}
+/* 
+  gallery page styles 
+  */
+.gallery {
+  columns: 3;
+  gap: 5px;
+  padding: 10px;
+}
+@media (max-width: 900px) {
+  .gallery {
+    columns: 2;
+    gap: 5px;
+  }
+}
+@media (max-width: 600px) {
+  .gallery {
+    columns: 1;
+    gap: 5px;
+  }
+}
+.total_photos {
+  text-align: center;
+  text-transform: capitalize;
+}
+.gallery_imgs {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+/* sidebar recent photos */
+.random_photos_detail_container {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  padding-bottom: 5px;
+  padding-top: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.random_photos_divs {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.random_photo_links {
+  text-decoration: none;
+}
+.random_photos_img {
+  min-width: 100px;
+  max-width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.random_photos_title {
+  color: black;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* photos scroll btns */
+.horizontal-scroll {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.left-btn {
+  position: relative;
+  left: 0;
+  top: 100px;
+  border-radius: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px black;
+}
+.right-btn {
+  position: relative;
+  left: 0px;
+  top: 100px;
+  border-radius: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px black;
+}
+.left_arrow,
+.right_arrow {
+  width: 20px;
+  height: 20px;
+}
+
+/* end of scroll photos by btn*/
+
+/* go to top */
+.go_to_top {
+  width: auto;
+  margin: auto;
+  position: sticky;
+  bottom: 0px;
+  cursor: pointer;
+}
+.go_to_top_icon {
+  width: 30px;
+  height: 30px;
+  color: black;
+}

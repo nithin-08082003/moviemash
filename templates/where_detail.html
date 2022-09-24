@@ -1,0 +1,73 @@
+{% if detail_post.category.title == 'news' %}
+<script class="news_page">
+  var NEWS_PAGE_LINK = document.querySelector("#NEWS_PAGE_LINK");
+  var SIDE_NEWS_PAGE_LINK = document.querySelector("#SIDE_NEWS_PAGE_LINK");
+  NEWS_PAGE_LINK.style.borderBottom = "3px solid black";
+  NEWS_PAGE_LINK.style.color = "black";
+  SIDE_NEWS_PAGE_LINK.style.background = "black";
+  SIDE_NEWS_PAGE_LINK.style.color = "white";
+</script>
+{% endif %}
+
+{% if detail_post.category.title == 'gossips' %}
+<script class="gossips_page">
+  var GOSSIPS_PAGE_LINK = document.querySelector("#GOSSIPS_PAGE_LINK");
+  var SIDE_GOSSIPS_PAGE_LINK = document.querySelector(
+    "#SIDE_GOSSIPS_PAGE_LINK"
+  );
+  GOSSIPS_PAGE_LINK.style.borderBottom = "3px solid black";
+  GOSSIPS_PAGE_LINK.style.color = "black";
+  SIDE_GOSSIPS_PAGE_LINK.style.background = "black";
+  SIDE_GOSSIPS_PAGE_LINK.style.color = "white";
+</script>
+{% endif %}
+
+{% if detail_post.category.title == 'hollywood' %}
+<script class="hollywood_page">
+  var HOLLYWOOD_PAGE_LINK = document.querySelector("#HOLLYWOOD_PAGE_LINK");
+  var SIDE_HOLLYWOOD_PAGE_LINK = document.querySelector(
+    "#SIDE_HOLLYWOOD_PAGE_LINK"
+  );
+  HOLLYWOOD_PAGE_LINK.style.borderBottom = "3px solid black";
+  HOLLYWOOD_PAGE_LINK.style.color = "black";
+  SIDE_HOLLYWOOD_PAGE_LINK.style.background = "black";
+  SIDE_HOLLYWOOD_PAGE_LINK.style.color = "white";
+</script>
+{% endif %}
+
+{% if detail_post.category.title == 'style' %}
+<script class="style_page">
+  var STYLE_PAGE_LINK = document.querySelector("#STYLE_PAGE_LINK");
+  var SIDE_STYLE_PAGE_LINK = document.querySelector("#SIDE_STYLE_PAGE_LINK");
+  STYLE_PAGE_LINK.style.borderBottom = "3px solid black";
+  STYLE_PAGE_LINK.style.color = "black";
+  SIDE_STYLE_PAGE_LINK.style.background = "black";
+  SIDE_STYLE_PAGE_LINK.style.color = "white";
+</script>
+{% endif %}
+
+{% if detail_post.category.title == 'boxoffice' %}
+<script class="boxoffice_page">
+  var BOXOFFICE_PAGE_LINK = document.querySelector("#BOXOFFICE_PAGE_LINK");
+  var SIDE_BOXOFFICE_PAGE_LINK = document.querySelector(
+    "#SIDE_BOXOFFICE_PAGE_LINK"
+  );
+  BOXOFFICE_PAGE_LINK.style.borderBottom = "3px solid black";
+  BOXOFFICE_PAGE_LINK.style.color = "black";
+  SIDE_BOXOFFICE_PAGE_LINK.style.background = "black";
+  SIDE_BOXOFFICE_PAGE_LINK.style.color = "white";
+</script>
+{% endif %}
+
+{% if detail_post.category.title == 'upcomings' %}
+<script class="upcomings_page">
+  var UPCOMINGS_PAGE_LINK = document.querySelector("#UPCOMINGS_PAGE_LINK");
+  var SIDE_UPCOMINGS_PAGE_LINK = document.querySelector(
+    "#SIDE_UPCOMINGS_PAGE_LINK"
+  );
+  UPCOMINGS_PAGE_LINK.style.borderBottom = "3px solid black";
+  UPCOMINGS_PAGE_LINK.style.color = "black";
+  SIDE_UPCOMINGS_PAGE_LINK.style.background = "black";
+  SIDE_UPCOMINGS_PAGE_LINK.style.color = "white";
+</script>
+{% endif %}

@@ -1,0 +1,98 @@
+.discover_main_div {
+  background: #000;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.discover_more {
+  margin-top: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+.discover_more_title {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 5px;
+  border-bottom: 2px solid white;
+}
+.discover_link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.discover_icon {
+  width: 50px;
+  height: 50px;
+  color: white;
+  padding: 10px;
+  border: 1.8px solid white;
+  border-radius: 100%;
+}
+.discover_icon:hover {
+  background-color: white;
+  color: black;
+}
+
+/* follow for more */
+
+.discover_social_links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.discover_social_title {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid white;
+}
+.discover_social_div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.discover_social_icon {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  color: white;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 100%;
+}
+.discover_social_icon:hover {
+  box-shadow: 0px 0px 5px 0px white;
+}
+/* copywrites notes */
+.copywrite {
+  text-align: center;
+  color: white;
+  padding-bottom: 10px;
+}
+.copywrite_title {
+  color: white;
+}

@@ -1,0 +1,106 @@
+/* photos home */
+
+/* sidebar recent photos */
+.random_photos_detail_container {
+  position: relative;
+  top: -40px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  margin-top: 5px;
+  margin-left: 42px;
+  margin-right: 42px;
+}
+.random_photos_divs {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.random_photo_links {
+  text-decoration: none;
+}
+.random_photos_img {
+  min-width: 100px;
+  max-width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  object-fit: cover;
+  padding: 3px;
+  border: 3px black solid;
+}
+.random_photos_title {
+  color: black;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* btns left right photos scroll */
+.horizontal-scroll {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 40px;
+}
+.left-btn {
+  /* position: relative;
+    left: 0;
+    top: 80px; */
+  border-radius: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 0px 2px 0px black;
+}
+.right-btn {
+  /* position: absolute;
+    left: 0px;
+    top: 80px; */
+  border-radius: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 0px 2px 0px black;
+}
+.left_arrow,
+.right_arrow {
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 500px) {
+  .horizontal-scroll {
+    display: none;
+  }
+  .random_photos_detail_container {
+    position: static;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    margin-top: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  .random_photos_img {
+    min-width: 85px;
+    max-width: 85px;
+    height: 85px;
+    border-radius: 100%;
+    object-fit: cover;
+    padding: 2px;
+    border: 2px black solid;
+  }
+}
