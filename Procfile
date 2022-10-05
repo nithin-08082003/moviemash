@@ -1,0 +1,1 @@
+web: gunicorn MOVIEMASH.wsgi --log-file
