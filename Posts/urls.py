@@ -13,5 +13,4 @@ urlpatterns = [
     path('gossips/',views.Gossips ,name="gossips"),
     path('upcomings/',views.Upcomings ,name="upcomings"),
     path('photos/',views.Photos ,name="photos"),
-    path('webstories/',views.Webstories ,name="webstories"),
 ]
