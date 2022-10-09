@@ -1,1 +1,1 @@
-web: gunicorn MOVIEMASH.wsgi --log-file
+web gunicorn MOVIEMASH.wsgi:application --log-file -
