@@ -6,8 +6,10 @@
       href="{% url 'detail' home_first_post.id %}"
       class="home_first_link_container"
     >
-      <img class="home_first_image" src="{{ home_first_post.image.url }}" />
-      <span class="home_first_belong">| {{ home_first_post.category.title }}</span>
+      <img class="home_first_image" src="{{ home_first_post.image }}" />
+      <span class="home_first_belong"
+        >| {{ home_first_post.category.title }}</span
+      >
       <p class="home_first_headline">{{ home_first_post.headline }}</p>
       <p class="home_first_summary">{{ home_first_post.summary }}</p>
     </a>

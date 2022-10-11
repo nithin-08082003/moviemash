@@ -15,7 +15,7 @@ class Category(models.Model):
 class AllPosts(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, null=True, blank=False)
-    image = models.ImageField(upload_to='all/', blank=False)
+    image = models.CharField(max_length=100,blank=False)
     image_credit = models.CharField(max_length=100, blank=True)
     headline = models.CharField(max_length=300, blank=False)
     summary = models.CharField(max_length=500, blank=True)
@@ -34,7 +34,7 @@ class AllPosts(models.Model):
 
 class PhotoCategory(models.Model):
     category_title = models.CharField(max_length=50, blank=False)
-    main_img = models.ImageField(upload_to='photos/', blank=False)
+    main_img = models.CharField(max_length=100,blank=False)
     category_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -47,7 +47,7 @@ class PhotoCategory(models.Model):
 class GalleryImg(models.Model):
     photo_category = models.ForeignKey(
         PhotoCategory, on_delete=models.CASCADE, null=True, blank=False)
-    gallery_images = models.ImageField(upload_to='photos/', blank=False)
+    gallery_images = models.CharField(max_length=100,blank=False)
     img_uploaded = models.DateTimeField(auto_now_add=True)
 
     class Meta:

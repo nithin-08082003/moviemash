@@ -67,7 +67,7 @@
       class="random_img_link"
       href="{% url 'photos-detail' random_img.photo_category %}"
     >
-      <img class="random_img" src="{{ random_img.gallery_images.url }}" />
+      <img class="random_img" src="{{ random_img.gallery_images }}" />
     </a>
   </div>
   {% endfor %}

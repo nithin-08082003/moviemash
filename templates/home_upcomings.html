@@ -8,7 +8,7 @@
         href="{% url 'detail' home_up_post.id %}"
         class="home_up_link_container"
       >
-        <img class="home_up_image" src="{{ home_up_post.image.url }}" />
+        <img class="home_up_image" src="{{ home_up_post.image }}" />
         <p class="home_up_headline">
           {{ home_up_post.headline|truncatewords:8 }}
         </p>

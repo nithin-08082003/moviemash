@@ -148,7 +148,7 @@
             >
               <img
                 class="random_photos_img"
-                src="{{ detail_random_photos.main_img.url }}"
+                src="{{ detail_random_photos.main_img }}"
               />
               <div class="random_photos_stuffs_div">
                 <p class="random_photos_title">
@@ -173,7 +173,7 @@
           <img
             class="gallery_imgs"
             onclick="openFullImg(this.src)"
-            src="{{ gallery.gallery_images.url }}"
+            src="{{ gallery.gallery_images }}"
             alt="#{{ gallery.category }}-img"
           />
           {% endfor %}

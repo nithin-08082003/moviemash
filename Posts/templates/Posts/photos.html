@@ -30,7 +30,7 @@
         {% for top_first in top_photos_post %}
         <div
           class="top_container"
-          style="background-image:url({{top_first.main_img.url}}) ;"
+          style="background-image:url({{top_first.main_img}}) ;"
         >
           <a
             href="{% url 'photos-detail' top_first.category_title %}"
@@ -55,7 +55,7 @@
               class="four_link_container"
             >
               <div class="four_div1">
-                <img class="four_image" src="{{ four_post.main_img.url }}" />
+                <img class="four_image" src="{{ four_post.main_img }}" />
               </div>
               <div class="four_div2">
                 <small class="four_belongs">| photos</small>
@@ -75,10 +75,7 @@
             href="{% url 'photos-detail' remain_post.category_title %}"
             class="photos_remain_link_container"
           >
-            <img
-              class="photos_remain_image"
-              src="{{ remain_post.main_img.url }}"
-            />
+            <img class="photos_remain_image" src="{{ remain_post.main_img }}" />
             <p class="photos_remain_headline">
               #{{ remain_post.category_title }}
             </p>

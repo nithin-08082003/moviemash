@@ -72,7 +72,7 @@
             <p class="detail_updated">
               published on | {{ detail_post.updated }}
             </p>
-            <img class="detail_img" src="{{ detail_post.image.url }}" />
+            <img class="detail_img" src="{{ detail_post.image }}" />
             <small class="img_creadit">
               image-credit : {{ detail_post.image_credit }}
             </small>
@@ -109,7 +109,7 @@
             <p class="detail_updated">
               published on | {{ next_posts.updated }}
             </p>
-            <img class="detail_img" src="{{ next_posts.image.url }}" />
+            <img class="detail_img" src="{{ next_posts.image }}" />
             {% if next_posts.summary %}
             <p class="detail_summary">" {{ next_posts.summary }} "</p>
             {% endif %}
@@ -196,7 +196,7 @@
               >
                 <img
                   class="recent_photos_img"
-                  src="{{ detail_recent_photos.main_img.url }}"
+                  src="{{ detail_recent_photos.main_img }}"
                 />
                 <div class="recent_photos_stuffs_div">
                   <p class="recent_photos_title">
@@ -216,10 +216,7 @@
                 href="{% url 'detail' recent_allpost.id %}"
                 class="recent_link_container"
               >
-                <img
-                  class="recent_image"
-                  src="{{ recent_allpost.image.url }}"
-                />
+                <img class="recent_image" src="{{ recent_allpost.image }}" />
                 <div class="recent_detail_texts">
                   <span class="recent_belong">
                     | {{ recent_allpost.category.title }}</span

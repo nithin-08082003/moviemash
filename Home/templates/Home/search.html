@@ -117,7 +117,7 @@
             >
               <img
                 class="searched_photos_img"
-                src="{{ search_photos.main_img.url }}"
+                src="{{ search_photos.main_img }}"
                 alt=""
               />
               <div class="photos_search_stuffs_div">
@@ -139,7 +139,7 @@
         <div class="searched_all_results">
           <a class="searched_posts_link" href="{% url 'detail' search.id %}">
             <div class="searched_allposts_img_div">
-              <img class="searched_all_img" src="{{ search.image.url }}" />
+              <img class="searched_all_img" src="{{ search.image }}" />
             </div>
             <div class="searched_posts_stuffs">
               <small class="allposts_belong">| {{ search.category }}</small>
